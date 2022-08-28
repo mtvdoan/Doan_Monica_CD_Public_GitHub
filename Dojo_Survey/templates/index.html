@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>DOJO SURVEY</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="text-align:center">
+  <div class="container" style="padding: 50px; text-align:center; background-color: black; border: 2px solid black; color: white; font-faamily: monospace">
+    <h1> Dojo Survey </h1>
+    <form action="/fillout" method="post">
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="fname" placeholder="First Name">
+      <p style="margin: 25px">
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lname" placeholder="Last Name">
+      </p>
+    
+    <div name="location" style="margin: 25px" class="modal-dialog-centered">
+    <label for="selectlocation" style="margin: 10px">Dojo Location:</label>
+    <select class="form-control" id="floatingSelect" aria-label="Floating label select example" name="selectlocation" style="width: 200px">
+      <option selected>Location</option>
+      <option value="San Jose">San Jose</option>
+      <option value="Los Angeles">Los Angeles</option>
+      <option value="Seattle">Seattle</option>
+      <option value="Chicago">Chicago</option>
+    </select>
+    </div>
+    <div name="favoritelanguage" class="modal-dialog-centered" style="margin: 25px">
+      <label for="favoritelang" style="margin: 10px">What's your favorite programing language?:</label>
+      <select class="form-control" id="floatingSelect" aria-label="Floating label select example" name="favoritelang" style="text-align:center; width: 200px">
+        <option selected>Language</option>
+        <option value="Python">Python</option>
+        <option value="Javascript">Javascript</option>
+        <option value="HTML">HTML</option>
+        <option value="C++">C++</option>
+      </select>
+    </div>
+    <div>
+      <textarea class="form-control" id="floatingSelect" placeholder="Comments: (Optional)" rows="5" name="commententry" style="font-family: monospace; font-size: 18px; margin: 25px"></textarea>
+    </div>
+    <div>
+      <input action="/results" type="submit" class="btn btn-primary" style="margin: 25px; width: 300px; height: 80px; font-family: monospace; font-size: 24px">
+    </div>
+    </form>
+  </div>
+</body>
+</html>
