@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Create a User</title>
+
+</head>
+
+<body class="bg-white text-center text-dark" style="font-family: monospace; border: 2px solid black">
+
+    <h1 style="background-color: lavender">Add a User!</h1>
+    <a href="/" class="btn btn-outline-danger" style="margin: 25px; font-size: 1.5rem">Return Home</a>
+    <hr>
+    <form action="/create/user" method="POST">
+
+        <div class="form-group" style=>
+            <label for="first_name" style="font-size: 2rem">First Name:</label>
+            <input type="text" class="form-control text-center" name="first_name">
+        </div>
+        <div class="form-group">
+            <label for="last_name" style="font-size: 2rem">Last Name:</label>
+            <input type="text" class="form-control text-center" name="last_name">
+        </div>
+        <div class="form-group">
+            <label for="email" style="font-size: 2rem">Email Address:</label>
+            <input type="text" class="form-control text-center" name="email">
+        </div>
+        <button type="submit" class="btn btn-outline-info" style="margin: 25px; font-size: 1.5rem">Create User</button>
+
+    </form>
+
+
+
+</body>
+
+</html>
