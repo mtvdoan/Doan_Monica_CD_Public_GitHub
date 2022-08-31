@@ -10,12 +10,12 @@ class User:
         self.updated_at = data['updated_at']
 
     @classmethod
-    def get_all(cls):
+    def show_all_users(cls):
         query = "SELECT * FROM users;"
         results = connectToMySQL('users').query_db(query)
         users = []
-        for u in results:
-            users.append( cls(u) )
+        for person in results:
+            users.append( cls(person) )
         return users
 
     @classmethod
