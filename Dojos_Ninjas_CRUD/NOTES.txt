@@ -1,0 +1,55 @@
+Draft Plan
+
+3 html pages
+    -dojos (like an index)
+        -home page with New Dojo Name entry and 
+        -create button goes to 5000/ninjas html page
+        -list of all current dojos (links)
+            -click on links go to dojos's # (dojo id# from sql) page with member details: dojos/dojo_id#
+
+        -Add button goes to 5000/ninjas html page
+    -5000/ninjas html page
+        -blank form to fill out 
+            -dojo interest field
+                -drop down menu with all dojos from database mysql
+            -First Name
+            -Last Name
+            -Age
+                -drop down menu integer for age
+            -add create button
+                -this will redirect with added ninja info in the link of the dojo name they chose.
+                    -click the dojo name link will show the info of that ninja registered
+    -5000/dojos/dojos_id# 
+        -shows all the ninja members in that particular dojo 
+        -dojo name will be on top "Ninjas of the Tendo Dojo!"
+        -details: (table)
+            -First Name
+            -Last Name
+            -Age
+        -"home button"
+            -goes back to dojos page 
+                -redirect 5000/dojos
+-Dojos_Ninjas_CRUD folder:
+    -pipefile
+    -pipelock
+    -server
+    -__init__.py 
+
+    -flask app folder within Dojos_Ninja_CRUD holds everything below:
+        -config folder
+            -mysqlconnection.py
+        -controller folder
+            -burgers.py
+        -MODELS
+            burger.py
+        -static folder
+            -css folder
+            -js folder
+            -img folder
+        -templates
+            -html of home (index.html, dojos.html)
+            -ninjas.html
+                -
+            -dojos_#.html (replace # with dojo_id associated with the member)
+                -shows all ninjas that is in the dojo with specific dojo_id
+        

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{dojo.name}} Roster</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-white text-center text-black" style="font-family: monospace; margin: auto; font-color: black">
+    <h1 style="font-size: 3rem; font-weight: bold">Ninjas of The {{dojo.name}}</h1>
+    <table class="table-primary" style="width: 100%; font-size: 1.5rem">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Dojo ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ninja in dojo.ninjas %}
+            <tr>
+                <td>{{ ninja.first_name }}</td>
+                <td>{{ ninja.last_name }}</td>
+                <td>{{ ninja.age }}</td>
+                <td>{{ ninja.id }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+    <a class="btn btn-info" href="/dojos" style="margin: 25px; font-size: 1rem">Return</a>
+</body>
+</html>

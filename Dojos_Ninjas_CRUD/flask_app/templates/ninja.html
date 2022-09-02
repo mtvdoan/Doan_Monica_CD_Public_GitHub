@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{dojo.name}} Roster</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="bg-white text-center text-black" style="font-family: monospace; margin: auto; font-color: black">
+
+    <h1 style="font-size: 3rem; font-weight: bold">Create a New Ninja</h1>
+    <form action="/create/ninja" method="post" type="form-control" style="border: 1px solid black; margin: 25px">
+        <select class="form-select" aria-label="Default select example" style="margin:25px" name="dojos_id">
+            <option selected>Choose Your Dojo!</option>
+            {% for d in dojo%}
+            <option value="{{d.id}}">
+                {{d.name}}
+            </option>
+            {% endfor %}
+        </select>
+        <div class="mb-3">
+            <label for="first_name" class="col-form-label-lg" style="font-weight: bold">First Name</label>
+            <input type="text" class="form-control" id="first_name" placeholder="First Name" style="width: 75%; margin: auto" name="first_name">
+        </div>
+
+        <div class="mb-3">
+            <label for="last_name" class="col-form-label-lg" style="font-weight: bold">Last Name</label>
+            <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name" style="width: 75%; margin: auto">
+        </div>
+
+        <div class="mb-3">
+            <label for="age" class="col-form-label-lg" style="font-weight: bold">Age</label>
+            <input type="text" class="form-control" id="age" placeholder="Age" style="width: 75%; margin: auto" name="age">
+        </div>
+        <div>
+            <input type="submit" value="Add Ninja" class="btn btn-primary alert-success" style="margin: 25px" name="create_ninja">
+        </div>
+    </form>
+</body>
+</html>

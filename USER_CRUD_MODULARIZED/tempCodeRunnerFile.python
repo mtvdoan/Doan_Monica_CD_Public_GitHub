@@ -1,0 +1,9 @@
+def xtoy(x,y):
+    result = x ** y
+    for i in range(result.length-1)
+        print(result[i])
+
+x=4
+y=3
+xtoy(x,y)
+    
