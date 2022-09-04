@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ALL CURRENT USERS</title>
+</head>
+
+<body class="bg-white text-center text-dark" style="font-family: monospace">
+    <h1>All Users</h1>
+    <table class="table">
+        <thead class="thead-info"; style="font-size: 2rem; font-weight: bold">
+            <tr class="table-info">
+                <th scope="col">ID #</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            {% for user in users %}
+            <tr>
+                <td scope="row">{{user.id}}</td>
+                <td>{{user.first_name}} {{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.created_at.strftime('%B %-d %Y')}}</td>
+                <td>
+                    <a class="btn btn-outline-info" href="user/{{user.id}}">Show</a>
+                    <a class="btn btn-outline-warning" href="user/edit/{{user.id}}">Edit</a>
+                    <a class="btn btn-outline-danger" href="user/delete/{{user.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="/users/new">Add a New User</a>
+
+</body>
+
+</html>
