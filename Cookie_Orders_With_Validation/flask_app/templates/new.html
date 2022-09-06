@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cookies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+    <div class="card" style="font-family: monospace; margin: 50px">
+        <div class="card-body">
+            <div class="container2 pt-3 bg-light text-black text-center" style="font-size: 4rem; font-weight: bold">
+                <p>Log a Cookie Order</p>
+                <div style="font-size: 18px" class="text-danger">
+                {% with messages = get_flashed_messages() %}    
+            <!-- declare a variable called messages -->
+                    {% if messages %}                            
+                <!-- check if there are any messages -->
+                        {% for message in messages %}            
+                    <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </div>
+            </div>
+            <div class="d-flex justify-content-around mt-5" style="font-size: 2.5rem">
+                <p></p>
+            </div>
+            <div class="container3" style="font-size: 2rem">
+                <form action="/create" method="POST">
+                    <div class="form-group">
+                        <label for="customer_name" style="font-size: 1.25rem">Customer Name</label>
+                        <input type="text" class="form-control text-center" name="customer_name" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cookie_type" style="font-size: 1.25rem">Cookie Type</label>
+                        <input type="text" class="form-control text-center" name="cookie_type" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="number_of_boxes" style="font-size: 1.25rem">Number Of Boxes</label>
+                        <input type="text" class="form-control text-center" name="number_of_boxes" value="">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="font-size: 1.25rem">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
