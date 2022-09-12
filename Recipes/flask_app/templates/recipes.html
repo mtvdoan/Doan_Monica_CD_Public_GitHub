@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Viewing Recipes!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<style>
+    h1{
+        font-family: "Trocchi", serif;
+    }
+    
+    body {
+        font-family: "Poppins", sans-serif;
+        margin: auto;
+        padding: auto;
+        max-width: 80%;
+        background-image: url('/static/img/food2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        
+    }
+</style>
+<body>
+    <h1 style="background-color: #FFD0B9; text-align: center; margin: 15px; border: 2px solid black; border-radius: 15px; padding: 25px">
+        Welcome to RecipeShare, {{reglog.first_name}} {{reglog.last_name}}!
+        <img src="/static/img/rice_bowl.png" alt="foodbowl" width="100px" height="100px">
+    </h1>
+    
+        <div class = "d-flex justify-content-center">
+            <div class="card border-primary mb-3" style="border: 1px solid black; margin: 30px; padding: 15px; width: 85%; border-radius: 10px">
+                <div class="card-header bg-info p-2 text-dark" style="font-size: 2.5rem; border-radius: 10px; padding: 5px; --bs-bg-opacity: 0.2">
+                    <h2>
+                        Hi, {{reglog.first_name}} {{reglog.last_name}}!
+                        <img src="/static/img/cooking.png" alt="cooking" width="100px" height="100px">
+                    </h2>
+                </div>
+                <h4>
+                    <b>
+                        All posted recipes: 
+                        <img src="/static/img/recipe.png" alt="recipe" width="100px" height="100px" style="margin: 25px">
+                    </b>
+                </h4>
+                    <div class="d-flex justify-content-left" style="font-family: Trocchi">
+                        <a class="btn btn-success btn-lg" style="margin-left: 150px" href="#">Add a New Recipe + </a>
+                    </div>
+                <div class = "d-flex justify-content-center">
+                    <div class="card border-primary mb-3" style="border: 1px solid black; margin: 30px; padding: 15px; width: 85%; border-radius: 10px">
+                        <form action="/recipes" method="post" class="mb-3" style="margin-top: 10px">
+                            <table class="table text-center" style="font-size: 1.5rem">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Recipe Name</th>
+                                        <th scope="col">Under 30 Minutes?</th>
+                                        <th scope="col">Posted By</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider text-center">
+                                    {% for recipe in recipes %}
+                                    <tr>
+                                        <td>{{recipe.recipe_name}}</td>
+                                        <td>{{recipe.recipe_under_30}}</td>
+                                        <td>{{recipe.reglog.first_name}} {{recipe.reglog.last_name}}</td>
+                                        <td>
+                                    
+                                            {% if recipe.reglog.id == reglog.id: %}
+                                                <a class="btn btn-info" href="/recipes/{{recipe.id}}">View</a>
+                                                <a class="btn btn-warning" href="/recipes/edit/{{recipe.id}}">Edit</a>
+                                                <a class="btn btn-outline-danger" href="/recipes/delete/{{recipe.id}}">Delete</a>
+                                            {% else: %}
+                                                <a class="btn btn-info" href="/recipes/{{recipe.id}}">View</a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="d-flex justify-content-center">
+        <a href="/logout" class="btn btn-danger btn-lg">Logout</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
