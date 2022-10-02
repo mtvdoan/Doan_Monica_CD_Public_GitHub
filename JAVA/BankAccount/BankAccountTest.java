@@ -7,7 +7,7 @@ public class BankAccountTest {
         System.out.println("The number of accounts you currently own is: " + bA.getNumberOfAccountsCreated());
         bA.depositChecking(100.00);
         System.out.println("You have this much in your Checking Account: " + bA.getCheckingBalance());
-        bA.depositChecking(300.00);
+        bA.depositSavings(300.00);
         System.out.println("You have this much in your Savings Account: " + bA.getSavingsBalance());
         System.out.println("Your total balance is: " + bA.totalBalanceOfAccounts());
 
@@ -19,7 +19,7 @@ public class BankAccountTest {
         System.out.println("You have this much in your Savings Account: " + bA.getSavingsBalance());
         System.out.println("Your total balance is: " + bA.totalBalanceOfAccounts());
 
-        System.out.println();
+        System.out.println("------------------------------------------------------------------------------------------------");
 
         //*Create BankAccount #2 */
         BankAccount bA2 = new BankAccount();
@@ -39,7 +39,7 @@ public class BankAccountTest {
         System.out.println("You have this much in your Savings Account: " + bA2.getSavingsBalance());
         System.out.println("Your total balance is: " + bA2.totalBalanceOfAccounts());
 
-        System.out.println();
+        System.out.println("------------------------------------------------------------------------------------------------");
 
         //*Create BankAccount #3 */
         BankAccount bA3 = new BankAccount();
@@ -59,13 +59,12 @@ public class BankAccountTest {
         System.out.println("You have this much in your Savings Account: " + bA3.getSavingsBalance());
         System.out.println("Your total balance is: " + bA3.totalBalanceOfAccounts());
 
-
         System.out.println();
-        System.out.println();
+        System.out.println("------------------------------------------------------------------------------------------------");
 
         long sumGrandTotalForAll = (long) (bA.totalBalanceOfAccounts() + bA2.totalBalanceOfAccounts() + bA3.totalBalanceOfAccounts());
         System.out.println("The grand total of all accounts is: " + sumGrandTotalForAll);
-    
+        System.out.println("------------------------------------------------------------------------------------------------");
     
     }
 
