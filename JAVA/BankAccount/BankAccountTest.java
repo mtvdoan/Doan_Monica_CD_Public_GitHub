@@ -4,7 +4,6 @@ public class BankAccountTest {
         BankAccount bA = new BankAccount();
         System.out.println("This is Account #: " + bA.getNumberOfAccountsCreated());
         System.out.println("Your new Account Number is: " + bA.getBankAccountNumber()); 
-        System.out.println("The number of accounts you currently own is: " + bA.getNumberOfAccountsCreated());
         bA.depositChecking(100.00);
         System.out.println("You have this much in your Checking Account: " + bA.getCheckingBalance());
         bA.depositSavings(300.00);
