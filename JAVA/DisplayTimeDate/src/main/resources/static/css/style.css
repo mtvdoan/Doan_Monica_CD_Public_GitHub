@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body{
+	margin: auto;
+	text-align: center;
+	white-space: nowrap;
+
+}
+
+.col-sm-3{
+	margin: auto;
+	padding: auto;
+	white-space: nowrap;
+	display: flex;
+	justify-content: space-evenly;
+	font-size: 24px;
+}
+
+
+h2{
+	color: blue;
+	
+}
+
+time{
+	color: green;
+}
+

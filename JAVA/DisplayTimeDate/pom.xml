@@ -9,7 +9,7 @@
 		<version>2.7.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.templatespringstarter</groupId>
+	<groupId>com.codingdojo.displaytimedatestarter</groupId>
 	<artifactId>TemplateSpringStarter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
