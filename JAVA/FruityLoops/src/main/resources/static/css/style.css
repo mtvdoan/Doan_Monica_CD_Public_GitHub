@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+*{
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+}
+
+.container{
+
+	margin: 25px;
+	padding: 25px;
+	background-color: pink;
+}
+
+table{
+	background-color: white;
+}
+
