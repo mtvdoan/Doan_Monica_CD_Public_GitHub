@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>LOGIN Page</title>
+<title>Omikuji Results</title>
 <!-- Don't forget to edit your CSS/JS -->
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 
@@ -17,32 +17,21 @@
 
 </head>
 <body>
-	<div>
-	    <h3 class="login">Login</h3>
-	    <form action='/login' method='POST'>
-			<label>Email:</label>
-		    	<input type="text" name='email'>
-			<label>Password:</label>
-		    	<input type='password' name='password'>
-		    	<input type='submit' value='login'>
-	    </form>
+	<div class="container">
+		<div class="card w-75 bg-light">
+			<div class="card-header w-75">
+		           <h1>Omikuji おみくじ Results</h1>
+		       </div>
+		       <div class="card-body">
+		       	<div class="mb-3=">
+					<c:out value="${result}"></c:out>
+				</div>	
+			</div>
+		</div>
 	</div>
-	
-	<div>
-	 	<form action="/search">
-	        <label>Search:</label>
-	        <input type="text" name="searchTerm">
-	        <input type="submit">
-    	</form>
-	</div>
-	
-	<div>
-
-	
-	</div>
-<script type="text/javascript" src="js/app.js"></script>
-<script src="/webjars/jquery/jquery.min.js"></script>
 <!-- For any Bootstrap that uses JS or jQuery-->
+<script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

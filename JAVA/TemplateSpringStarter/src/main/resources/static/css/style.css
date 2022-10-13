@@ -1,1 +1,18 @@
 @charset "UTF-8";
+
+*{
+	margin: 25px auto;
+
+	text-align: center;
+	white-space: nowrap;
+}
+
+
+
+.welcome{
+	color: blue;
+}
+
+.login{
+	color:green;
+}

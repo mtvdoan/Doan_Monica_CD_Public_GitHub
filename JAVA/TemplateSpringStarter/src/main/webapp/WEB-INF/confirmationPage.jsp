@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>LOGIN Page</title>
+<title>Confirmation Page</title>
 <!-- Don't forget to edit your CSS/JS -->
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 
@@ -17,32 +17,27 @@
 
 </head>
 <body>
+	<h1 class="welcome">Confirmation PAGE</h1>
 	<div>
-	    <h3 class="login">Login</h3>
-	    <form action='/login' method='POST'>
-			<label>Email:</label>
-		    	<input type="text" name='email'>
-			<label>Password:</label>
-		    	<input type='password' name='password'>
-		    	<input type='submit' value='login'>
-	    </form>
-	</div>
-	
-	<div>
-	 	<form action="/search">
-	        <label>Search:</label>
-	        <input type="text" name="searchTerm">
-	        <input type="submit">
-    	</form>
-	</div>
-	
-	<div>
+<!--   ...   -->
+    
+    <h3>Pay</h3>
+    <form action="/processPayment" method="post">
+        <input type="hidden" name="productID" value="128">
+        <label>Credit Card Number</label>
+        <input type="text" name="creditCardNumber">
+        <label>Expiration Date</label>
+        <input type="date" name="expDate">
+        <input type="submit">
+    </form>
+    
+<!--   ...   -->
 
-	
+
 	</div>
-<script type="text/javascript" src="js/app.js"></script>
-<script src="/webjars/jquery/jquery.min.js"></script>
 <!-- For any Bootstrap that uses JS or jQuery-->
+<script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

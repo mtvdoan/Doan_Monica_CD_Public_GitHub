@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+*{
+	margin: 10px auto;
+	text-align: center;
+	font-family: cascadia code;
+}
+h3{
+	color: #7C83BC;
+}
+label{
+	margin-right:15px;
+	font-weight: bold;
+	color: #9063CD;
+}
+
+p{
+	color: #BB85AB;
+}
+.container{
+	width: 600px;
+	padding:50px;
+	word-wrap: normal;
+	color: #AA336A;
+	font-size: 2rem;
+	
+}

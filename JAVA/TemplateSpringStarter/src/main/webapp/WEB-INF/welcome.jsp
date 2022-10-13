@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>LOGIN Page</title>
+<title>WELCOME Page</title>
 <!-- Don't forget to edit your CSS/JS -->
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 
@@ -17,32 +17,16 @@
 
 </head>
 <body>
+	<h1 class="welcome">WELCOME PAGE</h1>
 	<div>
-	    <h3 class="login">Login</h3>
-	    <form action='/login' method='POST'>
-			<label>Email:</label>
-		    	<input type="text" name='email'>
-			<label>Password:</label>
-		    	<input type='password' name='password'>
-		    	<input type='submit' value='login'>
-	    </form>
+		<p>
+		Hello,
+		<c:out value="${email}"></c:out>
+		</p>
 	</div>
-	
-	<div>
-	 	<form action="/search">
-	        <label>Search:</label>
-	        <input type="text" name="searchTerm">
-	        <input type="submit">
-    	</form>
-	</div>
-	
-	<div>
-
-	
-	</div>
-<script type="text/javascript" src="js/app.js"></script>
-<script src="/webjars/jquery/jquery.min.js"></script>
 <!-- For any Bootstrap that uses JS or jQuery-->
+<script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
