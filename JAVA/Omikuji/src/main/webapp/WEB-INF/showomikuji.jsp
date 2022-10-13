@@ -26,6 +26,7 @@
 		       	<div class="mb-3=">
 					<c:out value="${result}"></c:out>
 				</div>	
+				<a href="/omikuji">Go Back</a>
 			</div>
 		</div>
 	</div>
