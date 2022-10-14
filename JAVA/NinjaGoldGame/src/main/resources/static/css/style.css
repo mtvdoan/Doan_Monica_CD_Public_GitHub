@@ -1,0 +1,35 @@
+@charset "UTF-8";
+    *{
+        margin: 5px auto;
+        text-align: center;
+        font-family: cascadia code;
+        max-width: 1500px;
+    }
+    
+    .card{
+        margin: auto;
+        white-space: nowrap;
+    }
+
+    .yourgold{
+        
+        text-align: left;
+        margin: 15px;
+        padding: 2px;
+    }
+
+    .inputgold{
+        margin: 15px;
+        padding: 2px;
+    }
+
+    .activity{
+        text-align: left;
+        margin: 15px;
+    }
+    
+	.scrollable{
+	  overflow-y: auto;
+	  max-height: 300px;
+	  width: 1200px;
+	}
