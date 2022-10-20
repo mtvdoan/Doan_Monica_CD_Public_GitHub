@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+*{
+    margin: auto;
+    padding: auto;
+    max-width: 1000px;
+    text-align: center
+}
+
+.container{
+    padding: 0px;
+    margin: 10px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: normal;
+    white-space: nowrap;
+    
+}
+
+form{
+    border: 2px solid lightgray;
+    margin: auto;
+    padding: 10px;
+}
+
+table{
+    border: 2px solid black;
+    
+}
+
+label{
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+.mb-3{
+    width: 700px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
