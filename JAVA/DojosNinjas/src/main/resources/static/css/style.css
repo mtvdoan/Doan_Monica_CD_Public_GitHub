@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+*{
+	margin: auto;
+	padding: auto;
+	text-align: center;
+	max-width: 1100px;
+}
+
+
+
+.listOfDojos{
+	width: 300px;
+}
+
+.newNinjaContainer{
+	margin: auto;
+	padding: auto;
+	max-width: 800px;
+}
+
+.dropDownDojo1{
+	margin:auto;
+	font-family: cascadia-code;
+	text-align: right;
+	align-self: right;
+	
+}
+
+li{
+	text-align: left;
+	
+}
+
+button{
+	margin: 25px;
+}
+
+.col-sm-5{
+	margin: 2px;
+	text-align: left;
+}
+
+label{
+	margin:0px;
+}
