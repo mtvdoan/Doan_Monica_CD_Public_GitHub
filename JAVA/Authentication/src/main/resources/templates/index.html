@@ -1,0 +1,145 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!-- c:out ; c:forEach etc. -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- Formatting (dates) -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!-- form:form -->
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!-- for rendering errors on PUT routes -->
+<%@ page isErrorPage="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN & REGISTRATION</title>
+    <link href="/style.css" rel="stylesheet">
+    <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <div id="registration" class="flex">
+        <div class="registration-container">
+            <div class="page-content page-container" id="page-content">
+                <div class="padding">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Register</strong>
+                                </div>
+                                <div class="card-body">
+                                    <form:form action="/register" method="post" methodAttribute="newUser" type="text">
+                                    <div class="control-group">
+                                        <label class="control-label" for="username">Username</label>
+                                        <div class="controls">
+                                            <form:input path="username" type="text" id="username" value="username" name="username" class="input-xlarge"></form:input>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="control-group">
+                                        <label class="control-label" for="email">E-mail</label>
+                                        <div class="controls">
+                                            <form:input path="email" type="text" id="email" name="email" placeholder=""
+                                            class="input-xlarge"></form:input>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="control-group">
+                                        <!-- Password-->
+                                        <label class="control-label" for="password">Password</label>
+                                        <div class="controls">
+                                            <form:input path="password" type="password" id="password" name="password"
+                                            placeholder="" class="input-xlarge"></form:input>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="control-group">
+                                        <!-- Password -->
+                                        <label class="control-label" for="password_confirm">Password
+                                            (Confirm)</label>
+                                            <div class="controls">
+                                                <form:input path="password" type="password" id="password_confirm"
+                                                name="password" placeholder="" class="input-xlarge"></form:input>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="control-group">
+                                            <!-- Button -->
+                                            <div class="controls">
+                                                <button class="btn btn-success" type="submit">Register</button>
+                                            </div>
+                                        </div>
+                                    </form:form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="login" class="flex">
+        <div class="login-container">
+            <div class="page-content page-container" id="page-content">
+                <div class="padding">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Login to your account</strong>
+                                </div>
+                                <div class="card-body">
+                                    
+                                    <form:form action="/login" method="post" modelAttribute="newLogin">
+                                    <div class="form-group">
+                                        <label class="text-blue" for="email">Email address</label>
+                                        <form:input path="email" type="email" class="input" id="email" aria-describedby="email" placeholder="Enter email"></form:input> 
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-blue" for="password">Password</label>
+                                        <form:input path="password" type="password" class="input" id="password" placeholder="Password"></form:input>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script
+src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+crossorigin="anonymous"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+crossorigin="anonymous"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+crossorigin="anonymous"></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"
+integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+crossorigin="anonymous"></script>
+
+
+</html>
+
