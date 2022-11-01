@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+*{
+	margin: auto;
+	padding: auto;
+	text-align: center;
+}
+
+.column1{
+	display: inline-flex;
+}
+
+.card1, .card2{
+	width: 20rem;
+	border: 2px solid black;
+	margin: 50px;
+	padding: 25px;
+}
+
+.tableContainer{
+	width: 75rem;
+	margin: auto;
+	padding: 10px;
+	border: 2px solid black;
+}
+
+.btn{
+	margin: 5px;
+	
+}
