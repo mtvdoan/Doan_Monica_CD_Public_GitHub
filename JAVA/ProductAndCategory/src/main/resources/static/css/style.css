@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+*{
+	margin: auto;
+	padding: auto;
+	text-align: center;
+	white-space: nowrap;
+	max-width: 1000px;
+}
+
+.column1{
+	display: inline-flex;
+}
+
+.card1, .card2{
+	width: 25rem;
+	border: 2px solid black;
+	margin: 50px;
+	padding: 25px;
+}
+
+.tableContainer{
+	width: 55rem;
+	margin: auto;
+	border: 2px solid black;
+	margin-top: 10px;
+}
+
+.btn{
+	margin: 5px;
+	
+}
+
+.category{
+	margin-right: 80%;
+}
