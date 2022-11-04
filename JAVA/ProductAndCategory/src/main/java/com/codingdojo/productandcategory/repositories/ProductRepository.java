@@ -20,12 +20,7 @@ public interface ProductRepository extends CrudRepository<Product, Long>{
 	Optional<Product>findById(Long id);
 	Product findByIdIs(Long id);
 	Optional<Product> findOneById(Long id);
-    // Retrieves a list of all categories for a particular product
-//    List<Product> findAllByCategories(Category category);
-//    
-//    // Retrieves a list of any categories a particular product
-//    // does not belong to.
-//    List<Product> findByCategoriesNotContains(Category category);
+
 }
 
 
