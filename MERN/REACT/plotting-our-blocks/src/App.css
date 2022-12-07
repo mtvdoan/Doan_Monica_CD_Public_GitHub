@@ -1,0 +1,10 @@
+.App{
+  background-color: grey;
+  border: 1px solid black;
+  margin: auto;
+  padding: auto;
+}
+
+.container2{
+  display: flex;
+}
