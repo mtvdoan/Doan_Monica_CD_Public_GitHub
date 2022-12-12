@@ -1,0 +1,46 @@
+.App{
+  margin: auto;
+  padding: auto;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid grey;
+}
+
+.toDoListContainer{
+  margin: auto;
+  margin-bottom: 25px;
+  padding: 25px;
+  width: 700px;
+  border: 1px solid grey;
+  
+}
+
+.toDoForm{
+  text-align: center;
+  margin: auto;
+  padding: auto;
+}
+
+ul{
+  margin: 10px;
+  margin-left: 30%;
+  padding: auto;
+  width: 500px;
+  list-style-position: inside;
+}
+
+span, .toDoFormButton{
+  padding: 5px;
+  
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+    margin: 10px;
+}
+
+.line-through{
+  text-decoration: line-through;
+}
