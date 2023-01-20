@@ -1,0 +1,34 @@
+! PROJECT MANAGER I   
+
+Note: We will be using this project for the next couple of assignments as well, so keep that in mind as you are building it.
+
+In this assignment, you will add the ability to create a new product on the main page of the app.
+
+Create your MERN stack folder structure
+
+Create your server, model, controller, routes, and config files for your server
+
+On the client end ==> Create a form component so that your Product can have a title, price and description
+
+Check in your database that your products are being added. Consider using Postman to verify that you get a full mongo document (json object including _id, createdAt, updatedAt, etc.) as a response to your create route.
+
+! PROJECT MANAGER II
+Continue from the previous assignment. On the main page, below the product form, list out all of your products in your database. Then, create a route so that you can see the specifics for a particular product.
+
+Create a component to list out all products on your main page
+
+Create a new view component that will let you see the details of a particular product (localhost:3000/:id)
+
+Link to the detail page in the list of products
+
+! PROJECT MANAGER III
+
+Update Product Manager so that you can update and delete your products.
+
+Add the route localhost:3000/edit/:id that will include an autofilled form to edit a given product.
+
+Add a delete button in the List component as well as the detail component that will delete the product from the database
+
+After you delete the product from the Detail component, redirect to the main view
+
+After you delete the product from the main view, update the DOM so that the product is removed.
