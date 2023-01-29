@@ -1,19 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
 import {
-    Box,
-    Typography,
     Table,
     TableBody,
     TableCell,
     TableHead,
     TableRow,
-Button
-} from '@mui/material'
+    Button
+} from '@mui/material';
+import DeleteAuthor from './DeleteAuthor';
 
 const AllAuthors = (props) => {
-const [authors, setAuthors] = useState([]);
+    const [authors, setAuthors] = useState([]);
+
+    //BONUS: Sort the authors alphabetically.
+    authors.sort((a, b) => {
+        const lastNameA = a.lastName.toLowerCase();
+        const lastNameB = b.lastName.toLowerCase();
+        if (lastNameA < lastNameB) return -1;
+        if (lastNameA > lastNameB) return 1;
+        return 0;
+    });
     
     useEffect(()=>{
         axios.get("http://localhost:8000/api/authors/")
@@ -25,30 +32,24 @@ const [authors, setAuthors] = useState([]);
             console.log(err);
         })
     }, [])
+    const removeFromDom = authorId => {
+        setAuthors(authors.filter(author => author._id !== authorId))
+    }
 
-    const handleDeleteAuthor = (authorId) => {
-        axios
-            .delete(`http://localhost:8000/api/authors/delete/${authorId}`)
-            .then((response) => {
-                console.log("success deleting author")
-                alert("Deleted author")
-                console.log(response)
-                const filteredAuthors = authors.filter((author) => {
-                return author._id !== authorId;
-                });
-                setAuthors(filteredAuthors);
-            })
-            .catch((err) => {
-                console.log("error deleting author", err.response);
-            });
-    };
-    
     return (
         <Table>
             <TableHead>
                 <TableRow>
-                    <TableCell>Author's Name</TableCell>
-                    <TableCell>Actions</TableCell>
+                    <TableCell>
+                        <b>
+                            Author's Name
+                        </b>
+                    </TableCell>
+                    <TableCell>
+                        <b>
+                            Actions
+                        </b>
+                    </TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -58,14 +59,8 @@ const [authors, setAuthors] = useState([]);
                     <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key={author._id} align="center">
                         <TableCell variant='h6'>{author.firstName} {author.lastName}: &nbsp; &nbsp;</TableCell>
                         <TableCell>
-                            <Button href={`/authors/update/${author._id}/`} color="info" variant="contained">Edit</Button>
-                            <Button
-                                onClick={() => handleDeleteAuthor(author._id)}
-                                color="error"
-                                variant='contained'
-                            >
-                                Delete
-                            </Button>
+                            <Button href={`/authors/update/${author._id}/`} color="info" variant="contained">Update</Button>
+                            <DeleteAuthor authorId={author._id} successCallback={()=>removeFromDom(author._id)}/>
                         </TableCell>
                     </TableRow>                    
                 )})
