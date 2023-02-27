@@ -1,0 +1,88 @@
+/*
+*MONICA DOAN
+*LEARN PLATFORM: 'DISPLAY'
+Use classes, attributes, and methods in the JavaScript language for this challenge. Use only a single JavaScript file for this assignment, it may be the same from the Fronts assignment. All examples are done in order, starting with a new instance of the SLL class.
+
+Create display() that uses a while loop and a runner to return a string containing all list values. Build what you wish console.log(myList) did!
+
+    SLL1 = new SLL()
+    SLL1.addFront(76) => Node { data: 76, next: null }
+    SLL1.addFront(2) => Node { data: 2, next: Node { data: 76, next: null } }
+    SLL1.display() => "2, 76"
+    SLL1.addFront(11.41) => Node { data: 11.41, next: Node { data: 2, next: Node { data: 76, next: null } } }
+    SLL1.display() => "11.41, 2, 76"
+*/
+
+class SLLNode {
+    constructor(val) {
+        this.value = val; //holds value for this node
+        this.next = null; //pointer to next node
+    }
+}
+class SLL {
+    constructor() {
+        this.head = null;
+    }
+    addFront(value) {
+        let newNode = new SLLNode(value);
+        newNode.next = this.head;
+        this.head = newNode; //now head is pointing to the new node.
+        return this.head; //Or you can say return this;
+    }
+    //Remove a node from teh front of list
+    removeFront() {
+        if (this.head == null) {
+            //if the list is empty, nothing to remove
+            return this.head;
+        }
+        let removeNode = this.head; //Have variable hold the node we'll remove
+        this.head = removeNode.next; //Moves the head of the list to the wnd node, which will become the new head when we're done
+        removeNode.next = null;
+        return this.head;
+    }
+
+    front() {
+        if (this.head == null) {
+            return null;
+        } else {
+            //Ternary operator: condition ? value_if_true : value_if_false
+            return this.head.value; //This will print out 'null'
+        }
+        //return this.head ? this.head.value : null;
+        //return this.head == null ? null: this.head.value;
+    }
+    //Display the value sof all nodes in teh list
+    display() {
+        let listStr = ""; //Empty string that will contain the values of list
+        //Edge case: list is empty
+        if (this.head == null) {
+            return listStr;
+        }
+        // We have least one node
+        listStr += this.head.value; //Concatentes the first value in list.
+        //For the second node onwards, we'll add ", " + value;
+        let runner = this.head.next;
+
+        while (runner != null) {
+            listStr += ", " + runner.value; //Add the node's value to the list
+            runner = runner.next; //Move the runner to next node
+        }
+        return listStr;
+    }
+}
+console.log("Results for DISPLAY Question: ");
+let SLL4 = new SLL();
+console.log(SLL4.display()); //prints nothing because listStr is empty
+console.log(SLL4.front());
+SLL4.addFront(10);
+console.log(SLL4.front()); //Should print out 10 since we shoved 10 in front with the addFront();
+SLL4.addFront(5);
+SLL4.addFront(3);
+console.log(SLL4.display()); // prints out 3, 5, 10 :) Yay
+//! Print:
+//     Results for DISPLAY Question:
+
+// null
+// 10
+// 3, 5, 10  :) yay  <------console.log(SLL4.display());
+// √
